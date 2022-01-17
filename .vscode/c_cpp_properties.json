@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/deps/Include"
+            ],
+            "defines": [
+                "NN_SDK_BUILD_RELEASE",
+                "NN_NINTENDO_SDK",
+                "NN_BUILD_CONFIG_COMPILER_CLANG",
+                "NN_BUILD_CONFIG_CPU_ARM64",
+                "NN_BUILD_CONFIG_COMPILER_SUPPORTS_STATIC_ASSERT",
+                "NN_BUILD_CONFIG_COMPILER_SUPPORTS_STRONG_ENUMS",
+                "NN_BUILD_CONFIG_COMPILER_SUPPORTS_AUTO_TYPE",
+                "NN_BUILD_CONFIG_COMPILER_SUPPORTS_CLANG",
+                "NN_BUILD_CONFIG_ADDRESS_64",
+                "NN_BUILD_CONFIG_SPEC_NX",
+                "NN_BUILD_CONFIG_OS_HORIZON",
+                "NN_BUILD_CONFIG_CPU_CORTEX_A57_AARCH64",
+                "NN_BUILD_CONFIG_ENDIAN_LITTLE",
+                "NN_BUILD_CONFIG_OS_SUPPORTS_HORIZON",
+                "NN_OS_CPU_ARM_AARCH64",
+                "NN_OS_CPU_ARM_AARCH64_ARMV8A",
+                "NN_BUILD_CONFIG_FPU_FP_ARMV8",
+                "NN_BUILD_CONFIG_FPU_VFP",
+                "NN_BUILD_CONFIG_FPU_NEON",
+                "NN_BUILD_CONFIG_COMPILER_SUPPORTS_STD_CHRONO"
+            ],
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
