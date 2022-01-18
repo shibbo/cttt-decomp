@@ -1,9 +1,9 @@
 # cttt-decomp
 A decompilation of the Nintendo Switch version of Captain Toad: Treasure Tracker [v1.3.0].
 
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/shibbo/cttt-decomp/main/data/percent.json&style=flat" />
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/shibbo/cttt-decomp/main/data/percent.json?token=GHSAT0AAAAAABQVV32DV7KL6LDMN74ZLIDSYPGCQBA&style=flat" />
 <a href="https://discord.gg/x7qhJKU3QN">
-<img src="https://img.shields.io/discord/334663517355507714?logo=discord"
+<img src="https://img.shields.io/discord/932498947715522610?logo=discord"
     alt="chat on our Discord"></a>
 
 ## Build Instructions
