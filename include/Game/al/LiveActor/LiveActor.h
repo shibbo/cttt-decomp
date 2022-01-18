@@ -8,6 +8,45 @@ namespace al {
     };
 
     class SwitchAreaDirector;
+    class HitSensor;
+    class SensorMsg;
+    class ScreenPointer;
+    class ScreenPointTarget;
+    class ActorPoseKeeperBase;
+    class ActorExecuteInfo;
+    class ActorActionKeeper;
+    class ActorItemKeeper;
+    class ActorScoreKeeper;
+    class Collider;
+    class CollisionParts;
+    class ModelKeeper;
+    class HitSensorKeeper;
+    class ScreenPointKeeper;
+    class HitReactionKeeper;
+    class RailKeeper;
+    class ShadowKeeper;
+    class ActorPrePassLightKeeper;
+    class ActorOcclusionKeeper;
+    class SubActorKeeper;
+    class ActorSceneInfo;
+
+    class LiveActorFlag {
+    public:
+        LiveActorFlag();
+
+        bool _0;
+        bool _1;
+        bool _2;
+        bool _3;
+        bool _4;
+        bool _5;
+        bool _6;
+        bool _7;
+        bool _8;
+        bool _9;
+        bool _A;
+        bool _B;
+    };
 
     class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseAudioKeeper, public IUseStageSwitch, public IUseSceneObj, public IUseAreaObj, public IUseCamera, public IUseCollision {
     public:
@@ -27,8 +66,13 @@ namespace al {
         virtual bool isForcedHidden() const;
         virtual void movement();
         virtual void calcAnim();
-
-        // todo -- finish me
+        virtual void draw();
+        virtual void startClipped();
+        virtual void endClipped();
+        virtual void attackSensor(HitSensor *, HitSensor *);
+        virtual void* getOwnerSensor() const;
+        virtual bool receiveMsg(SensorMsg const*, HitSensor *, HitSensor *);
+        virtual bool receiveMsgScreenPoint(const SensorMsg *, ScreenPointer *, ScreenPointTarget *);
 
         virtual const char* getName() const;
         virtual EffectKeeper* getEffectKeeper() const;
@@ -43,5 +87,31 @@ namespace al {
         virtual void control();
         virtual void calcAndSetBaseMtx();
         virtual void updateCollider();
+
+        const char* mName;
+        ActorPoseKeeperBase* mPoseKeeper;
+        ActorExecuteInfo* mExecuteInfo;
+        ActorActionKeeper* mActionKeeper;
+        ActorItemKeeper* mItemKeeper;
+        ActorScoreKeeper* mScoreKeeper;
+        Collider* mCollider;
+        CollisionParts* mCollisionParts;
+        ModelKeeper* mModelKeeper;
+        NerveKeeper* mNerveKeeper;
+        HitSensorKeeper* mHitSensorKeeper;
+        ScreenPointKeeper* mScreenPointKeeper;
+        EffectKeeper* mEffectKeeper;
+        AudioKeeper* mAudioKeeper;
+        HitReactionKeeper* mHitReactionKeeper;
+        StageSwitchKeeper* mStageSwitchKeeper;
+        RailKeeper* mRailKeeper;
+        ShadowKeeper* mShadowKeeper;
+        ActorPrePassLightKeeper* mPrePassLightKeeper;
+        ActorOcclusionKeeper* mOcclusionKeeper;
+        void* _E0;
+        SubActorKeeper* mSubActorKeeper;
+        void* _F0;
+        ActorSceneInfo* mSceneInfo;
+        LiveActorFlag* mFlags;
     };
 };

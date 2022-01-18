@@ -4,7 +4,7 @@
 #include "Game/al/LiveActor/NerveKeeper.h"
 
 namespace al {
-    class NerveExecutor : public al::IUseNerve, al::HioNode {
+    class NerveExecutor : public al::IUseNerve {
     public:
         NerveExecutor(const char *);
 
