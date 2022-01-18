@@ -108,20 +108,23 @@ for i in range(orig_length):
     orig_operands = curOrigInstr.operands
     cust_operands = curCustInstr.operands
 
-    if str(original_instrs) == str(custom_instructions):
+    if str(curOrigInstr) == str(curCustInstr):
         if printDiff == True:
             print(f"{Fore.GREEN}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
         continue
 
-    if curOrigInstr.id != curOrigInstr.id:
+    if curOrigInstr.id != curCustInstr.id:
         print(f"{Fore.RED}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
         instr_equal = False
-        break
+        continue
 
     for j in range(len(orig_operands)):
         if orig_operands[j].reg != cust_operands[j]:
-            print(f"{Fore.RED}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
-            regs_equal = False
+            if curOrigInstr.id == 21:
+                print(f"{Fore.YELLOW}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
+            else:
+                print(f"{Fore.RED}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
+                regs_equal = False
             break
 
 if instr_equal == True and regs_equal == True:
@@ -143,7 +146,7 @@ if instr_equal == True and regs_equal == True:
         w.writelines(outCsv)
 
 elif instr_equal == True and regs_equal == False:
-    print("Function has a matching instruction, but operands are not equal.")
+    print("Function has matching instructions, but operands are not equal.")
 elif instr_equal == False and regs_equal == True:
     print("Function has matching operands, but instructions are not equal.")
 elif instr_equal == False and regs_equal == False:
