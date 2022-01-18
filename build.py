@@ -19,6 +19,7 @@ for root, dirs, files in os.walk("source"):
             map_path = build_path.replace("build", "map", 1).replace(".o", ".map")
 
             os.makedirs(os.path.dirname(build_path), exist_ok=True)
+            os.makedirs(os.path.dirname(map_path), exist_ok=True)
             tasks.append((source_path, build_path, map_path))
 
 for task in tasks:
