@@ -23,14 +23,17 @@ def getModule(sym):
     return ""
 
 if len(sys.argv) < 2:
-    print("python check.py [-check-diff] symbol_name")
+    print("python check.py [-no-diff] symbol_name")
     sys.exit(1)
 
-sym = sys.argv[2]
-printDiff = False
 
-if "-check-diff" in sys.argv:
-    printDiff = True
+printDiff = True
+
+if "-no-diff" in sys.argv:
+    sym = sys.argv[2]
+    printDiff = Fals
+else:
+    sym = sys.argv[1]
 
 func_sizes = { }
 sym_map = { }
@@ -120,15 +123,17 @@ for i in range(orig_length):
 
     for j in range(len(orig_operands)):
         if orig_operands[j].reg != cust_operands[j]:
-            if curOrigInstr.id == 21:
+            # B and BL instructions
+            if curOrigInstr.id == 21 or curOrigInstr.id == 16:
                 print(f"{Fore.YELLOW}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
             else:
                 print(f"{Fore.RED}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
                 regs_equal = False
             break
 
+isAlreadyMarked = False
+
 if instr_equal == True and regs_equal == True:
-    print("Function is matching! Marking as decompiled...")
 
     with open("data/functions.csv", "r") as f:
         csvData = f.readlines()
@@ -137,13 +142,22 @@ if instr_equal == True and regs_equal == True:
 
     for c in csvData:
         spl = c.split(",")
-        if spl[1] == sym:
+    
+        if spl[1] == sym and spl[2] == "false\n":
             outCsv.append(f"{spl[0]},{spl[1]},true\n")
+        elif spl[1] == sym and spl[2] == "true\n":
+            isAlreadyMarked = True
+            outCsv.append(c)
         else:
             outCsv.append(c)
 
     with open("data/functions.csv", "w") as w:
         w.writelines(outCsv)
+
+    if isAlreadyMarked == True:
+        print("Function is already marked as decompiled.")
+    else:
+        print("Function is matching! Marking as decompiled...")
 
 elif instr_equal == True and regs_equal == False:
     print("Function has matching instructions, but operands are not equal.")
