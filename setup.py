@@ -8,7 +8,7 @@ def install(what):
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', what])
 
 if not os.path.exists("cttt.nso"):
-    print("cttt.nso does not exist. Place a SMG1 dol named baserom.dol in the root.")
+    print("cttt.nso does not exist. Place a Captain Toad: Treasure Tracker v1.3.0 NSO named cttt.nso in the root.")
     sys.exit(1)
 else:
     print("Found cttt.nso...")
