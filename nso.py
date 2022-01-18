@@ -47,7 +47,5 @@ class NSO:
             self.textData = lz4.block.decompress(self.textData, uncompressed_size=textSize)
 
     def getFunction(self, addr, size):
-        print(addr)
-        print(size)
         funcData = self.textData[addr:addr + size]
         return funcData
