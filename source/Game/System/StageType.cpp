@@ -1,68 +1,68 @@
-#include "Game/Stage/StageType.h"
+#include "Game/System/StageType.h"
 #include "Game/al/Util.h"
 
-int StageType::calcStageTypeID(const char *pStage) {
-    if (al::isEqualString(pStage, "通常")) {
-        return 0;
+int StageType::calcStageTypeID(const char *pName) {
+    if (al::isEqualString(pName, "通常")) {
+        return STAGE_TYPE_NORMAL;
     }
 
-    if (al::isEqualString(pStage, "ボーナス")) {
-        return 1;
+    if (al::isEqualString(pName, "ボーナス")) {
+        return STAGE_TYPE_BONUS;
     }
 
-    if (al::isEqualString(pStage, "ミニゲーム")) {
-        return 2;
+    if (al::isEqualString(pName, "ミニゲーム")) {
+        return STAGE_TYPE_GAME_OVER_MINI_GAME;
     }
 
-    if (al::isEqualString(pStage, "挿絵デモ")) {
-        return 3;
+    if (al::isEqualString(pName, "挿絵デモ")) {
+        return STAGE_TYPE_PICTURE_DEMO;
     }
 
-    if (al::isEqualString(pStage, "挿絵")) {
-        return 4;
+    if (al::isEqualString(pName, "挿絵")) {
+        return STAGE_TYPE_PICTURE;
     }
 
-    if (al::isEqualString(pStage, "プロローグ")) {
-        return 5;
+    if (al::isEqualString(pName, "プロローグ")) {
+        return STAGE_TYPE_PROLOGUE;
     }
 
-    if (al::isEqualString(pStage, "特殊(3Dワールド)")) {
-        return 6;
+    if (al::isEqualString(pName, "特殊(3Dワールド)")) {
+        return STAGE_TYPE_SPECIAL_3D_WORLD;
     }
 
-    if (al::isEqualString(pStage, "特殊(マネック)")) {
-        return 7;
+    if (al::isEqualString(pName, "特殊(マネック)")) {
+        return STAGE_TYPE_SPECIAL_MANECK;
     }
 
-    if (al::isEqualString(pStage, "特殊(チェリー)")) {
-        return 8;
+    if (al::isEqualString(pName, "特殊(チェリー)")) {
+        return STAGE_TYPE_SPECIAL_CHERRY;
     }
 
-    if (al::isEqualString(pStage, "特殊(プロローグ)")) {
-        return 9;
+    if (al::isEqualString(pName, "特殊(プロローグ)")) {
+        return STAGE_TYPE_SPECIAL_PROLOGUE;
     }
 
-    if (al::isEqualString(pStage, "特殊(ボーナス)")) {
-        return 10;
+    if (al::isEqualString(pName, "特殊(ボーナス)")) {
+        return STAGE_TYPE_SPECIAL_BONUS;
     }
 
-    if (al::isEqualString(pStage, "特殊(その他)")) {
-        return 11;
+    if (al::isEqualString(pName, "特殊(その他)")) {
+        return STAGE_TYPE_SPECIAL_OTHER;
     }
 
-    if (al::isEqualString(pStage, "トリックアート")) {
-        return 12;
+    if (al::isEqualString(pName, "トリックアート")) {
+        return STAGE_TYPE_TRICK_ART;
     }
 
-    if (al::isEqualString(pStage, "白紙")) {
-        return 13;
+    if (al::isEqualString(pName, "白紙")) {
+        return STAGE_TYPE_WHITE;
     }
 
-    if (al::isEqualString(pStage, "Labyrinth")) {
-        return 14;
+    if (al::isEqualString(pName, "Labyrinth")) {
+        return STAGE_TYPE_LABYRINTH;
     }
 
-    return 0;
+    return STAGE_TYPE_NORMAL;
 }
 
 bool StageType::isNormal(const char *pName) {
