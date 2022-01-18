@@ -123,8 +123,11 @@ for i in range(orig_length):
 
     for j in range(len(orig_operands)):
         if orig_operands[j].reg != cust_operands[j]:
+            # ADRP and ADD can give of wrong operands because of us not linking, same with LDR
+            if curOrigInstr.id == 9 or curOrigInstr.id == 6 or curOrigInstr.id == 162:
+                print(f"{Fore.YELLOW}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
             # B and BL instructions
-            if curOrigInstr.id == 21 or curOrigInstr.id == 16:
+            elif curOrigInstr.id == 21 or curOrigInstr.id == 16:
                 print(f"{Fore.YELLOW}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")
             else:
                 print(f"{Fore.RED}{str(curOrigInstr):<80}{curCustInstr}{Style.RESET_ALL}")

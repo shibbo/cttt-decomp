@@ -4,7 +4,7 @@ import os
 import pathlib
 import shutil
 
-COMPILER_CMD = "-x c++ -std=gnu++14 -fno-common -fno-short-enums -fdata-sections -fPIC -mcpu=cortex-a57+fp+simd+crypto+crc -O3 -fomit-frame-pointer -Wall -I deps/Include -I deps/Common/Configs/Targets/NX-NXFP2-a64/Include -I include -DNN_NINTENDO_SDK -DNN_SDK_BUILD_RELEASE -c "
+COMPILER_CMD = "-x c++ -std=gnu++14 -fno-common -fno-short-enums -fdata-sections -fPIC -mcpu=cortex-a57+fp+simd+crypto+crc -O3 -fno-exceptions -fomit-frame-pointer -Wall -I deps/Include -I deps/Common/Configs/Targets/NX-NXFP2-a64/Include -I include -DNN_NINTENDO_SDK -DNN_SDK_BUILD_RELEASE -c "
 COMPILER_PATH = pathlib.Path("deps/Compilers/NX/nx/aarch64/bin/clang++.exe")
 OBJDUMP_PATH = pathlib.Path("deps/Compilers/NX/nx/aarch64/bin/aarch64-nintendo-nx-elf-objdump.exe")
 
