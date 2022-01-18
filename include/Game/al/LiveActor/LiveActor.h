@@ -27,6 +27,9 @@ namespace al {
         virtual bool isForcedHidden() const;
         virtual void movement();
         virtual void calcAnim();
+
+        // todo -- finish me
+
         virtual const char* getName() const;
         virtual EffectKeeper* getEffectKeeper() const;
         virtual AudioKeeper* getAudioKeeper() const;
