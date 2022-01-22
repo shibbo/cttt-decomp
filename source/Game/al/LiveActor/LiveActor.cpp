@@ -4,7 +4,31 @@
 
 namespace al {
     LiveActor::LiveActor(const char *pName) : mName(pName) {
-        memset(&mPoseKeeper, 0, 0xC0);
+        mPoseKeeper = nullptr;
+        mExecuteInfo = nullptr;
+        mActionKeeper = nullptr;
+        mItemKeeper = nullptr;
+        mScoreKeeper = nullptr;
+        mCollider = nullptr;
+        mCollisionParts = nullptr;
+        mModelKeeper = nullptr;
+        mNerveKeeper = nullptr;
+        mHitSensorKeeper = nullptr;
+        mScreenPointKeeper = nullptr;
+        mEffectKeeper = nullptr;
+        mAudioKeeper = nullptr;
+        mHitReactionKeeper = nullptr;
+        mStageSwitchKeeper = nullptr;
+        mRailKeeper = nullptr;
+        mShadowKeeper = nullptr;
+        mPrePassLightKeeper = nullptr;
+        mOcclusionKeeper = nullptr;
+        _E0 = nullptr;
+        mSubActorKeeper = nullptr;
+        _F0 = nullptr;
+        mSceneInfo = nullptr;
+        mFlags = nullptr;
+
         mFlags = new LiveActorFlag();
     }
 
