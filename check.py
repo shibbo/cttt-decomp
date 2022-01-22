@@ -31,7 +31,7 @@ printDiff = True
 
 if "-no-diff" in sys.argv:
     sym = sys.argv[2]
-    printDiff = False
+    printDiff = Fals
 else:
     sym = sys.argv[1]
 
@@ -99,7 +99,7 @@ cust_length = len(list(custom_instructions))
 
 if orig_length != cust_length:
     print("Custom function does not match the size of the original.")
-    #sys.exit(1)
+    sys.exit(1)
 
 instr_equal = True
 regs_equal = True
