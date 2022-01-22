@@ -1,6 +1,12 @@
 #include "Game/al/LiveActor/NerveUtil.h"
+#define NONMATCHING
 
 namespace al {
+	NONMATCHING void initNerve(al::LiveActor *pActor, al::Nerve const*pNerve, int type) {
+		NerveKeeper *keeper = new NerveKeeper(pActor, pNerve, type);
+		pActor->initNerveKeeper(keeper); // something here is wrong
+	}
+
 	void setNerve(IUseNerve *pUseNerve, const Nerve *pNerve) {
 		pUseNerve->getNerveKeeper()->setNerve(pNerve);
 	}
