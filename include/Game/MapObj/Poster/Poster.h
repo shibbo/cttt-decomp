@@ -3,7 +3,7 @@
 #include "Game/al/LiveActor/LiveActor.h"
 #include "Game/al/Util.h"
 #include "sead.h"
-#include "Game/Actors/Poster/PosterFall.h"
+#include "Game/MapObj/Poster/PosterFall.h"
 
 class Poster : public al::LiveActor {
     public:
@@ -23,8 +23,7 @@ class Poster : public al::LiveActor {
 
 };
 
-namespace
-{
+namespace {
     NERVE_HEADER(Poster, StartWait)
     NERVE_HEADER(Poster, Touch)
 }

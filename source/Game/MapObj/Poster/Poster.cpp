@@ -1,4 +1,4 @@
-#include "Game/Actors/Poster/Poster.h"
+#include "Game/MapObj/Poster/Poster.h"
 #include "Game/al/LiveActor/NerveKeeper.h"
 #include "Game/al/LiveActor/NerveUtil.h"
 #include "Game/al/Util/ActorUtil.h"

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Game/Actors/Poster/Poster.h"
+#include "Game/MapObj/Poster/Poster.h"
 
 class Poster;
 
