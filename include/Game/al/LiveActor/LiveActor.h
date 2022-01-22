@@ -29,24 +29,8 @@ namespace al {
     class ActorOcclusionKeeper;
     class SubActorKeeper;
     class ActorSceneInfo;
+    class LiveActorFlag;
 
-    class LiveActorFlag {
-    public:
-        LiveActorFlag();
-
-        bool _0;
-        bool _1;
-        bool _2;
-        bool _3;
-        bool _4;
-        bool _5;
-        bool _6;
-        bool _7;
-        bool _8;
-        bool _9;
-        bool _A;
-        bool _B;
-    };
 
     class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseAudioKeeper, public IUseStageSwitch, public IUseSceneObj, public IUseAreaObj, public IUseCamera, public IUseCollision {
     public:
