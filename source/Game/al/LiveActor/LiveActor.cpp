@@ -1,4 +1,5 @@
 #include "Game/al/LiveActor/LiveActor.h"
+#include "Game/al/LiveActor/LiveActorFlag.h"
 #include <string.h>
 
 namespace al {
