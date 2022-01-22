@@ -26,26 +26,10 @@ int BadgeConditionInfo::getParam(int index) const {
 	return mParams[index];
 }
 
-#ifdef NON_MATCHING // wtf is going on here
+#ifdef NON_MATCHING
 StageDatabaseInfo::StageDatabaseInfo() {
-	mStageType = 0;
-	mPlayerSelectType = 0;
-	mCollectItemNum = 0;
-	mCollectLockNum = 0;
 	mOpenPageNum = 1;
-	mChallengeTime = 0;
-	mBadgeConditionInfo = nullptr;
-	mStageName = nullptr;
-	mOffScreenBubble = 0;
-	mIsValidClipping = true;
-	mDisableStageEntry = 0;
-	mShowGhostTutorial = 0;
-	mIsGhostBusterStage = 0;
-	mSeasonId = 0;
-	mStageId = 0;
-	mCourseId = 0;
-	mPageId = 0;
-
+	mOffScreenBubble = true;
 	mBadgeConditionInfo = new BadgeConditionInfo();
 }
 #endif

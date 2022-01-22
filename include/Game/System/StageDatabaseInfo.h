@@ -54,21 +54,21 @@ public:
 	bool isBadgeGetKinokoTreasure(int index) const;
 	bool isBadgeNoFoundHeyho(int index) const;
 
-	int mSeasonId;                           // _0
-	int mStageId;                            // _4
-	int mCourseId;                           // _8
-	int mPageId;                             // _C
-	int mStageType;                          // _10
-	int mPlayerSelectType;                   // _14
-	int mCollectItemNum;                     // _18
-	int mCollectLockNum;                     // _1C
-	int mOpenPageNum;                        // _20
-	int mChallengeTime;                      // _24
-	const char* mStageName;                  // _28
-	BadgeConditionInfo* mBadgeConditionInfo; // _30
-	bool mOffScreenBubble;                   // _38
-	bool mIsValidClipping;                   // _39
-	bool mDisableStageEntry;                 // _3A
-	bool mShowGhostTutorial;                 // _3B
-	bool mIsGhostBusterStage;                // _3C
+	int mSeasonId = 0;                                 // _0
+	int mStageId = 0;                                  // _4
+	int mCourseId = 0;                                 // _8
+	int mPageId = 0;                                   // _C
+	int mStageType = 0;                                // _10
+	int mPlayerSelectType = 0;                         // _14
+	int mCollectItemNum = 0;                           // _18
+	int mCollectLockNum = 0;                           // _1C
+	int mOpenPageNum = 0;                              // _20
+	int mChallengeTime = 0;                            // _24
+	const char* mStageName = 0;                        // _28
+	BadgeConditionInfo* mBadgeConditionInfo = nullptr; // _30
+	bool mOffScreenBubble = false;                     // _38
+	bool mIsValidClipping = false;                     // _39
+	bool mDisableStageEntry = false;                   // _3A
+	bool mShowGhostTutorial = false;                   // _3B
+	bool mIsGhostBusterStage = false;                  // _3C
 };
