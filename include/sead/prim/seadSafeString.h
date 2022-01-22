@@ -4,12 +4,15 @@ namespace sead {
     template<typename T>
     class SafeStringBase {
     public:
-        SafeStringBase() : mString(&cNullChar) {
-            
+        SafeStringBase() : mString(&cNullChar) {}
+        SafeStringBase(const T* str) : mString(str)
+        {
+            //SEAD_ASSERT_MSG(str != nullptr, "str must not be nullptr.");
         }
 
+        SafeStringBase(const SafeStringBase& other) = default;
         virtual ~SafeStringBase() = default;
-        virtual SafeStringBase<T>& operator=(const SafeStringBase<T> &) = 0;
+        virtual SafeStringBase& operator=(const SafeStringBase& other);
         virtual void assureTerminationImpl_() const {
 
         }

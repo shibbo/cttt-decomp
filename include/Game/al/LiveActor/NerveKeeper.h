@@ -1,7 +1,10 @@
 #pragma once
 
+#include "Game/al/Interfaces.h"
+#include "Game/al/LiveActor/Nerve.h"
+
 namespace al {
-    class Nerve;
+    
     class NerveActionCtrl;
     class NerveStateCtrl;
 
@@ -15,7 +18,8 @@ namespace al {
         Nerve* getCurrentNerve();
         void initNerveAction(NerveActionCtrl *pActionCtrl);
 
-        NerveStateCtrl* mStateCtrl;   // _0
+        //NerveStateCtrl* mStateCtrl;   // _0
+        al::IUseNerve* mParent; // _0
         void* _8;
         Nerve* mNextNerve;            // _10
         int mStep;                    // _18

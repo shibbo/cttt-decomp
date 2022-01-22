@@ -67,6 +67,7 @@ namespace al {
         virtual CameraDirector* getCameraDirector() const;
         virtual bool isMovePartDisableStaticTouchEffects() const;
         virtual void initStageSwitchKeeper();
+        virtual void initNerveKeeper(al::NerveKeeper *);
         virtual void control();
         virtual void calcAndSetBaseMtx();
         virtual void updateCollider();
