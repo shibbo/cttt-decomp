@@ -14,7 +14,6 @@ namespace al {
         delete mScreenPointKeeper;
         delete mHitSensorKeeper;
         delete mModelKeeper;
-        delete mModelKeeper;
         delete mCollider;
         delete mScoreKeeper;
         delete mItemKeeper;
