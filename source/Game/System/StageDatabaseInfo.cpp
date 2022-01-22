@@ -80,3 +80,63 @@ void StageDatabaseInfo::initialize(int seasonId, int stageId, int courseId, int 
 	mIsValidClipping = !al::isEqualString(pClipping, "無効");
 }
 #endif
+
+bool StageDatabaseInfo::isPlayerKinopio() const {
+	return mPlayerSelectType == PLAYER_SELECT_TYPE_KINOPIO;
+}
+
+bool StageDatabaseInfo::isPlayerKinopico() const {
+	return mPlayerSelectType == PLAYER_SELECT_TYPE_KINOPICO;
+}
+
+bool StageDatabaseInfo::isPlayerKinopioAndKinopico() const {
+	return mPlayerSelectType == PLAYER_SELECT_TYPE_KINOPIO_AND_KINOPICO;
+}
+
+bool StageDatabaseInfo::isBadgeInvalid(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_INVALID;
+}
+
+bool StageDatabaseInfo::isBadgeCoinNum(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_COIN_NUM;
+}
+
+bool StageDatabaseInfo::isBadgeTouchNum(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_TOUCH_NUM;
+}
+
+bool StageDatabaseInfo::isBadgeOnSwitchChecker(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_ON_SWITCH_CHECKER;
+}
+
+bool StageDatabaseInfo::isBadgeOffSwitchChecker(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_OFF_SWITCH_CHECKER;
+}
+
+bool StageDatabaseInfo::isBadgeGetKinokoOneUp(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_GET_KINOKO_ONE_UP;
+}
+
+bool StageDatabaseInfo::isBadgeRadishThrowNum(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_RADISH_THROW_NUM;
+}
+
+bool StageDatabaseInfo::isBadgeNoDamage(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_NO_DAMAGE;
+}
+
+bool StageDatabaseInfo::isBadgeSwitchBlockNum(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_SWITCH_BLOCK_NUM;
+}
+
+bool StageDatabaseInfo::isBadgeDoubleCherryNum(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_DOUBLE_CHERRY_NUM;
+}
+
+bool StageDatabaseInfo::isBadgeGetKinokoTreasure(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_GET_KINOKO_TREASURE;
+}
+
+bool StageDatabaseInfo::isBadgeNoFoundHeyho(int index) const {
+	return mBadgeConditionInfo->getTypeID(index) == BADGE_CONDITION_TYPE_NO_FOUND_HEYHO;
+}
