@@ -31,10 +31,8 @@ namespace al {
     class ActorSceneInfo;
     class LiveActorFlag;
 
-
     class LiveActor : public IUseNerve, public IUseEffectKeeper, public IUseAudioKeeper, public IUseStageSwitch, public IUseSceneObj, public IUseAreaObj, public IUseCamera, public IUseCollision {
     public:
-        // good luck to the poor soul that does this one
         LiveActor(const char *);
 
         virtual NerveKeeper* getNerveKeeper() const;
@@ -59,6 +57,7 @@ namespace al {
         virtual bool receiveMsgScreenPoint(const SensorMsg *, ScreenPointer *, ScreenPointTarget *);
 
         virtual const char* getName() const;
+        virtual void* getBaseMtx() const;  // should be sead mtx
         virtual EffectKeeper* getEffectKeeper() const;
         virtual AudioKeeper* getAudioKeeper() const;
         virtual StageSwitchKeeper* getStageSwitchKeeper() const;
